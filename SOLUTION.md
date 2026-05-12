@@ -1,7 +1,7 @@
 # SMILES-2026 Signal Interference Cancellation
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## How to run
-Create an environment with Python 3 and install the required packages:
+Create a virtual environment with Python 3 and install the required packages:
 pip install numpy scipy gdown
 
 After that run the script in the terminal:
@@ -10,11 +10,11 @@ python applicant_solution.py
 The script will download the dataset challenge.mat.
 
 ## Obtained results:
-  ch0: 10.18 dB
-  ch1: 7.66 dB
-  ch2: 12.48 dB
-  ch3: 6.54 dB
-  Metric [yours]: 9.21 dB
+  * ch0: 10.18 dB
+  * ch1: 7.66 dB
+  * ch2: 12.48 dB
+  * ch3: 6.54 dB
+  * Metric [yours]: 9.21 dB
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Problem
 your_canceller function focuses on removing structured interference I[n, c] = F_c(TX)  +  E[n, c] where
@@ -46,7 +46,6 @@ Solution: score_filter -> SVD extraction.
 ### High Subtraction
 Triggered the unexplained/residual > 0.80.
 Solution: introduced a $0.80$ safety factor.
-------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Implementation Details
 1. Used np.linalg.lstsq with rcond=None for numerical robustness on complex-valued signal data.
 2. Implemented a local check for challenge.mat to prevent redundant downloads and handled gdown exceptions for reliable dataset acquisition.
