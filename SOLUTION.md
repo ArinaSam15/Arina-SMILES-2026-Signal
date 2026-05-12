@@ -25,7 +25,7 @@ It is self-interference where TX signal leaks into RX path.
 ## Solution description
 ### Layer 1: Nonlinear Self-Interference F_c
 Volterra-series model (3rd-order intermodulation terms) constructs a basis for the leakage of the transmit signal
-We solve the least-squares problem: min|R*X-X_TX*W|^2 and thus remove the structured interference driven by known transmit data.
+We solve the least-squares problem: min|RX-XW|^2 and thus remove the structured interference driven by known transmit data.
 
 ### Layer 2: Spatially Coherent Interference E
 The remaining residual contains an external interference term E that is unknown but spatially coherent across all 4 antennas.
